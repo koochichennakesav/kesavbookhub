@@ -1,0 +1,79 @@
+.book-details-container {
+  margin-left: 0px;
+  display: flex;
+  width: 300px;
+  box-sizing: border-box;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.cover-picc {
+  width: 133px;
+  height: 155px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.book-titlee {
+  color: #334155;
+  font-family: 'Roboto';
+  font-weight: 600;
+  font-size: 16px;
+  width: 180px;
+}
+
+.author-namee {
+  color: #475569;
+  font-family: 'Roboto';
+}
+
+.avg-ratingg {
+  color: #475569;
+  font-family: 'Roboto';
+}
+
+.statuss {
+  color: #475569;
+  font-family: 'Roboto';
+}
+
+.read-statuss {
+  color: #0284c7;
+}
+
+.star-icon {
+  color: #fbbf24;
+}
+
+@media screen and (max-width: 550px) {
+  .book-details-container {
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+
+  .cover-picc {
+    height: 133px;
+  }
+
+  .author-namee {
+    color: #475569;
+    font-family: 'Roboto';
+    font-size: 14px;
+  }
+
+  .avg-ratingg {
+    color: #475569;
+    font-family: 'Roboto';
+    font-size: 12px;
+  }
+
+  .statuss {
+    color: #475569;
+    font-family: 'Roboto';
+    font-size: 12px;
+  }
+}

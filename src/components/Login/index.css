@@ -1,0 +1,108 @@
+.login-button {
+  background: #0284c7;
+  border-radius: 8px;
+  cursor: pointer;
+  border-width: 0px;
+  margin-top: 30px;
+  height: 50px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.book-hub-login-bg-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background: #e5e5e5;
+  width: 100vw;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 30vw;
+  height: 484px;
+  background: #ffffff;
+  padding: 50px;
+  margin: 30px;
+}
+
+.book-hub-logo {
+  width: 141px;
+  height: 48px;
+  align-self: center;
+  margin-bottom: 30px;
+}
+
+.login-image {
+  height: 100vh;
+  width: 60vw;
+  margin-right: 20px;
+}
+
+.username {
+  color: #5a7184;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.user-input {
+  background: #ffffff;
+  border: 1px solid #c3cad9;
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 50px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.error-message {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ef4444;
+  margin-top: 0px;
+}
+
+@media screen and (max-width: 500px) {
+  .book-hub-login-bg-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .login-image {
+    height: 216px;
+    width: 216px;
+    text-align: center;
+    border-radius: 150px;
+    margin-top: 30px;
+  }
+
+  .form-container {
+    width: 320px;
+    padding: 15px;
+    margin: 0px;
+  }
+}

@@ -1,0 +1,172 @@
+.book-item-container {
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 45px;
+  background: #e5e5e5;
+  width: 100vw;
+  min-height: 120vh;
+  padding-bottom: 0px;
+  display: flex;
+  border-width: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-item-box-container {
+  background-color: #ffffff;
+  border-width: 0px;
+  border-radius: 20px;
+  width: 90vw;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  padding: 45px;
+}
+
+.books-details-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 90vw;
+  padding-bottom: 60px;
+}
+
+.book-item-description {
+  align-self: center;
+}
+
+.cover-pic {
+  width: 300px;
+  height: 270px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.book-title {
+  color: #334155;
+  font-family: 'Roboto';
+  font-weight: 600;
+  font-size: 22px;
+  width: 280px;
+  margin-bottom: 30px;
+}
+
+.author-name {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.avg-rating {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.status {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.read-status {
+  color: #0284c7;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.star-icon {
+  color: #fbbf24;
+  padding-top: 2px;
+}
+
+hr {
+  color: #e5e5e5;
+  width: 85vw;
+}
+
+@media screen and (max-width: 550px) {
+  .books-details-container {
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .book-item-container {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .book-item-box-container {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  hr {
+    color: #94a3b8;
+  }
+
+  .cover-pic {
+    width: 230px;
+    height: 230px;
+    border-radius: 8px;
+    align-self: center;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+  .book-title {
+    margin-bottom: 0px;
+  }
+
+  .author-name {
+    margin: 7px;
+    font-size: 16px;
+    color: #475569;
+  }
+
+  .avg-rating {
+    margin: 7px;
+    font-size: 16px;
+    color: #475569;
+  }
+
+  .read-status {
+    margin: 7px;
+    font-size: 16px;
+    color: #0284c7;
+  }
+
+  .status {
+    margin: 7px;
+    font-size: 16px;
+    color: #475569;
+  }
+
+  .book-item-description {
+    text-align: center;
+    align-self: center;
+  }
+
+  .about-author {
+    font-size: 16px;
+    color: #334155;
+  }
+
+  .about-book {
+    font-size: 16px;
+    color: #334155;
+  }
+
+  .description {
+    font-size: 14px;
+    color: #475569;
+  }
+}

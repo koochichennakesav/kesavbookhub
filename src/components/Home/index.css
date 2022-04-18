@@ -1,0 +1,255 @@
+.home-container {
+  background: #e5e5e5;
+  width: 100vw;
+  min-height: 83.4vh;
+  margin: 0px;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e5e5;
+}
+
+.common-container {
+  border-width: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.book-description {
+  color: #475569;
+  margin-bottom: 30px;
+}
+
+.top-rated-books-container {
+  background-color: #ffffff;
+  width: 90vw;
+  padding-left: 60px;
+  border-radius: 10px;
+  padding-right: 60px;
+  min-height: 450px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.find-your-books {
+  color: #1e293b;
+  font-family: 'Roboto';
+  font-size: 24px;
+}
+
+.find-books {
+  background: #0284c7;
+  border-radius: 4px;
+  width: 104px;
+  height: 36px;
+  cursor: pointer;
+  border-width: 0px;
+  outline: none;
+  color: #ffffff;
+  margin-right: 20px;
+}
+
+.top-rated-heading {
+  color: #1e293b;
+  font-family: 'Roboto';
+  margin-left: 20px;
+  font-size: 22px;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.slick-prev {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  background: #989898;
+  color: #ffffff;
+  top: 50%;
+  margin-top: -50px;
+  padding: 0;
+  border: none;
+  outline: none;
+  border-width: 0px;
+  border-radius: 130px;
+}
+
+.slick-next {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  background: #989898;
+  color: #ffffff;
+  top: 50%;
+  margin-top: -50px;
+  padding: 0;
+  border: none;
+  outline: none;
+  border-radius: 150px;
+}
+
+.home-failure-view-container {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-error-image {
+  width: 300px;
+  height: 200px;
+}
+
+.home-failure-heading {
+  font-family: 'Roboto';
+  font-size: 18px;
+  color: #475569;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.home-try-again {
+  width: 112px;
+  height: 48px;
+  cursor: pointer;
+  border-width: 0px;
+  border-radius: 12px;
+  outline: none;
+  text-align: center;
+  background-color: #0284c7;
+  color: #ffffff;
+}
+
+.home-loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+}
+
+.home-find-books {
+  display: none;
+}
+
+.home-slides-to-show {
+  display: none;
+}
+
+.min-slides-to-show {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .nav-link {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  .slides-to-show {
+    display: none;
+  }
+
+  .home-slides-to-show {
+    display: block;
+  }
+
+  .home-container {
+    background: #e5e5e5;
+    width: 100vw;
+    min-height: 80vh;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e5e5e5;
+  }
+
+  .top-rated-books-container {
+    background-color: #ffffff;
+    width: 100vw;
+    padding-left: 27px;
+    padding-right: 27px;
+    border-radius: 0px;
+    min-height: 240px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .top-container {
+    justify-content: flex-start;
+  }
+
+  .top-rated-heading {
+    margin-top: 18px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-size: 16px;
+  }
+
+  .find-your-books {
+    font-size: 20px;
+    margin: 15px;
+  }
+
+  .find-books {
+    display: none;
+  }
+
+  .home-find-books {
+    display: block;
+    background: #0284c7;
+    border-radius: 4px;
+    width: 104px;
+    height: 36px;
+    cursor: pointer;
+    border-width: 0px;
+    outline: none;
+    color: #ffffff;
+    margin: 15px;
+    text-decoration: none;
+  }
+
+  .book-description {
+    margin-left: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .min-slides-to-show {
+    display: none;
+  }
+
+  .home-failure-heading {
+    font-size: 16px;
+  }
+
+  .home-try-again {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 900px) {
+  .home-slides-to-show {
+    display: none;
+  }
+  .slides-to-show {
+    display: none;
+  }
+  .min-slides-to-show {
+    display: block;
+  }
+}
