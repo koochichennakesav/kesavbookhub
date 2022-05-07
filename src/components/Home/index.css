@@ -308,7 +308,7 @@ a {
     display: none;
   }
   .slides-to-show {
-    display: block;
+    display: none;
   }
   .min-slides-to-show {
     display: block;

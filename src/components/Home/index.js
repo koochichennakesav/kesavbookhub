@@ -98,7 +98,7 @@ class Home extends Component {
       dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 4,
+      slidesToShow: 3,
       slidesToScroll: 1,
       icon: true,
     }
@@ -117,7 +117,13 @@ class Home extends Component {
         <ul
           className="slides-to-show"
           style={{listStyleType: 'none', paddingLeft: '0px'}}
-        ></ul>
+        >
+          <Slider {...slidesToShow}>
+            {topRated.map(each => (
+              <TopRatedBooks key={each.id} bookItem={each} />
+            ))}
+          </Slider>
+        </ul>
         <ul
           className="home-slides-to-show"
           style={{listStyleType: 'none', paddingLeft: '0px'}}
