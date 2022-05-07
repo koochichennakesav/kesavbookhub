@@ -14,7 +14,7 @@ a {
   color: #3d3c3c;
 }
 
-.icon-container { 
+.icon-container {
   display: flex;
   justify-content: space-evenly;
   width: 200px;
@@ -28,6 +28,6 @@ a {
 }
 
 .icons {
-  height: 21px;
+  height: 16px;
   width: 18px;
 }

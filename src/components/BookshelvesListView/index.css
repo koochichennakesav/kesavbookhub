@@ -3,7 +3,7 @@
   display: flex;
   width: 300px;
   box-sizing: border-box;
-  margin-right: 40px;
+  margin-right: 30px;
   margin-bottom: 20px;
 }
 
@@ -57,6 +57,44 @@
 
   .cover-picc {
     height: 133px;
+  }
+
+  .book-titlee {
+    font-size: 14px;
+  }
+
+  .author-namee {
+    color: #475569;
+    font-family: 'Roboto';
+    font-size: 14px;
+  }
+
+  .avg-ratingg {
+    color: #475569;
+    font-family: 'Roboto';
+    font-size: 12px;
+  }
+
+  .statuss {
+    color: #475569;
+    font-family: 'Roboto';
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 918px) {
+  .book-details-container {
+    margin-bottom: 10px;
+    margin-top: 0px;
+    width: 220px;
+  }
+
+  .cover-picc {
+    height: 133px;
+  }
+
+  .book-titlee {
+    font-size: 14px;
   }
 
   .author-namee {

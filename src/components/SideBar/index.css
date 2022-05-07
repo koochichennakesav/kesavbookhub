@@ -8,7 +8,7 @@
 .bookshelves-sidebar-button {
   color: #475569;
   font-family: 'Roboto';
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   background-color: transparent;
   border-width: 0px;
@@ -17,9 +17,10 @@
   margin-bottom: 15px;
   padding-left: 0px;
   text-align: start;
+  width: 120px;
 }
 
-.active {
+.sidebar-active {
   color: #0284c7;
 }
 
@@ -36,10 +37,17 @@
     text-align: center;
     font-size: 14px;
     margin-bottom: 10px;
+    width: auto;
   }
 
-  .active {
+  .sidebar-active {
     background-color: #0284c7;
     color: #ffffff;
+  }
+}
+
+@media screen and (min-width: 551px) and (max-width: 918px) {
+  .bookshelves-sidebar-button {
+    font-size: 12px;
   }
 }

@@ -2,19 +2,49 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding-left: 30px;
-  padding-right: 40px;
   width: 100vw;
   height: 80px;
   background: #ffffff;
   border: 1px solid #e4e7eb;
-  box-sizing: border-box;
-  list-style-type: none;
   margin: 0px;
+  list-style-type: none;
+}
+
+.header-container-mobile {
+  display: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #64748b;
+}
+
+.list-item-header {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 15px;
+  align-items: center;
+}
+
+.header-links-container {
+  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 200px;
+  margin-top: 18px;
+  justify-content: space-evenly;
 }
 
 .book-hub-logo {
-  margin-top: 11px;
+  margin-top: 25px;
+  width: 140px;
+  height: 40px;
+  cursor: pointer;
+  outline: none;
+  margin-left: 30px;
 }
 
 .menu-button {
@@ -24,6 +54,10 @@
   border-width: 0px;
 }
 
+.button-container {
+  margin-top: -8px;
+}
+
 .header-button {
   margin-right: 15px;
   background-color: transparent;
@@ -31,9 +65,9 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 18px;
   color: #64748b;
+  text-decoration: none;
 }
 
 .logout-button {
@@ -44,7 +78,6 @@
   font-family: 'Roboto';
   font-weight: 500;
   font-size: 12px;
-  line-height: 16px;
   color: #f8fafc;
 }
 
@@ -61,19 +94,30 @@
 }
 
 @media screen and (max-width: 500px) {
-  .header-container {
+  .header-container-mobile {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 50px;
+    background: #ffffff;
+    border: 1px solid #e4e7eb;
     margin: 0px;
     padding: 10px;
-    height: 50px;
-    align-items: center;
+  }
+
+  .header-container {
+    display: none;
+  }
+
+  .header-links-container {
+    display: none;
   }
 
   .ham-berger {
     display: block;
-  }
-
-  .header-button {
-    display: none;
   }
 
   .book-hub-logo {
@@ -93,6 +137,7 @@
     font-size: 16px;
     line-height: 24px;
     color: #64748b;
+    text-decoration: none;
   }
 
   .logout-button {
@@ -105,17 +150,23 @@
     font-size: 12px;
     line-height: 16px;
     color: #f8fafc;
+    margin-top: 2px;
   }
 
   .header-links-container-elements {
-    display: block;
     background-color: #e5e5e5;
     width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding-left: 10px;
+    list-style-type: none;
+    margin: 0px;
+    padding-top: 7px;
+    padding-right: 10px;
+    list-style-type: none;
+    padding-bottom: 7px;
   }
 
   .close-button {
@@ -128,5 +179,10 @@
   .close {
     width: 17px;
     height: 17px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #64748b;
   }
 }

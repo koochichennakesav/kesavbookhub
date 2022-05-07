@@ -20,29 +20,19 @@ const Header = props => {
 
   return (
     <>
-      <ul className="header-container">
+      <ul
+        className="header-container"
+        style={{paddingLeft: '0px', listStyleType: 'none'}}
+      >
+        <Link to="/">
+          <img
+            className="book-hub-logo"
+            src="https://res.cloudinary.com/kesav-kuchi/image/upload/v1648060130/bookhublogo_r7wcay.png"
+            alt="website logo"
+          />
+        </Link>
         <li>
-          <Link to="/">
-            <img
-              className="book-hub-logo"
-              src="https://res.cloudinary.com/kesav-kuchi/image/upload/v1648060130/bookhublogo_r7wcay.png"
-              alt="website logo"
-            />
-          </Link>
-        </li>
-
-        <li>
-          <button
-            type="button"
-            className="menu-button"
-            onClick={() => setOptions(true)}
-          >
-            <GiHamburgerMenu
-              className="ham-berger"
-              style={{color: '#475569'}}
-            />
-          </button>
-          <nav className="header-links-container">
+          <nav className="header-links-container list-item-header">
             <Link to="/">
               <button type="button" className={`header-button ${home}`}>
                 Home
@@ -63,18 +53,36 @@ const Header = props => {
           </nav>
         </li>
       </ul>
+      <nav className="header-container-mobile">
+        <Link to="/">
+          <img
+            className="book-hub-logo"
+            src="https://res.cloudinary.com/kesav-kuchi/image/upload/v1648060130/bookhublogo_r7wcay.png"
+            alt="website logo"
+          />
+        </Link>
+        <button
+          type="button"
+          className="menu-button hamburger-menu"
+          onClick={() => setOptions(true)}
+        >
+          <GiHamburgerMenu className="ham-berger" style={{color: '#475569'}} />
+        </button>
+      </nav>
       {options && (
         <nav className="header-links-container-elements">
           <Link to="/">
-            <button type="button" className={`header-buttons ${home}`}>
+            <button type="button" className={`header-button ${home}`}>
               Home
             </button>
           </Link>
+
           <Link to="/shelf">
-            <button type="button" className={`header-buttons ${bookShelves}`}>
+            <button type="button" className={`header-button ${bookShelves}`}>
               Bookshelves
             </button>
           </Link>
+
           <button
             type="button"
             className="header-buttons logout-button"
@@ -82,6 +90,7 @@ const Header = props => {
           >
             Logout
           </button>
+
           <button
             type="button"
             className="close-button"

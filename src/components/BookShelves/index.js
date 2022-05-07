@@ -2,11 +2,11 @@ import Loader from 'react-loader-spinner'
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {BsSearch} from 'react-icons/bs'
+import {FaGoogle, FaTwitter, FaInstagram, FaYoutube} from 'react-icons/fa'
 
 import Header from '../Header'
 import SideBar from '../SideBar'
 import BookshelvesListView from '../BookshelvesListView'
-import FooterView from '../FooterView'
 
 import './index.css'
 
@@ -113,26 +113,45 @@ class BookShelves extends Component {
   renderBooksListView = () => {
     const {bookshelvesLists, searchValue} = this.state
 
-    return (
+    return bookshelvesLists.length > 0 ? (
       <div>
-        {bookshelvesLists.length > 0 ? (
-          <ul className="bookshelves-result-container">
-            {bookshelvesLists.map(each => (
-              <BookshelvesListView bookshelvesList={each} key={each.id} />
-            ))}
-          </ul>
-        ) : (
-          <div className="search-failure-view-container">
-            <img
-              src="https://res.cloudinary.com/kesav-kuchi/image/upload/v1649657840/search_result_error_svlcd1.png"
-              alt="no books"
-              className="search-image"
-            />
-            <p className="error-input">
-              Your search for {searchValue} did not find any matches.
-            </p>
+        <ul className="bookshelves-result-container">
+          {bookshelvesLists.map(each => (
+            <BookshelvesListView bookshelvesList={each} key={each.id} />
+          ))}
+        </ul>
+        <footer className="bookshelves-footer-home-section">
+          <div className="icon-container">
+            <a rel="noreferrer" href="https://www.google.com/" target="_blank">
+              <FaGoogle className="icons" />
+            </a>
+            <a rel="noreferrer" href="https://www.twitter.com" target="_blank">
+              <FaTwitter className="icons" />
+            </a>
+            <a
+              rel="noreferrer"
+              href="https://www.instagram.com"
+              target="_blank"
+            >
+              <FaInstagram className="icons" />
+            </a>
+            <a rel="noreferrer" href="https://www.youtube.com" target="_blank">
+              <FaYoutube className="icons" />
+            </a>
           </div>
-        )}
+          <p className="contact-us">Contact us</p>
+        </footer>
+      </div>
+    ) : (
+      <div className="search-failure-view-container">
+        <img
+          src="https://res.cloudinary.com/kesav-kuchi/image/upload/v1649657840/search_result_error_svlcd1.png"
+          alt="no books"
+          className="search-image"
+        />
+        <p className="search-input">
+          Your search for {searchValue} did not find any matches.
+        </p>
       </div>
     )
   }
@@ -179,10 +198,10 @@ class BookShelves extends Component {
     const labels = options[0].label
 
     return (
-      <div className="common-container">
+      <>
         <Header />
-        <div className="book-shelves-container">
-          <div className="bookshelves-user-search-input-container">
+        <ul className="book-shelves-container">
+          <li className="bookshelves-user-search-input-container">
             <input
               type="search"
               className="bookshelves-user-search-input"
@@ -197,7 +216,7 @@ class BookShelves extends Component {
             >
               <BsSearch />
             </button>
-          </div>
+          </li>
           <h1 className="bookshelves-heading">Bookshelves</h1>
           <ul className="bookshelves-options-container">
             {bookshelvesList.map(each => (
@@ -209,7 +228,7 @@ class BookShelves extends Component {
               />
             ))}
           </ul>
-          <div className="sidebar-container">
+          <li className="sidebar-container">
             <h1 className="book-shelves-heading">Bookshelves</h1>
             <ul style={{paddingLeft: '0px', listStyleType: 'none'}}>
               {bookshelvesList.map(each => (
@@ -221,8 +240,8 @@ class BookShelves extends Component {
                 />
               ))}
             </ul>
-          </div>
-          <div className="book-shelves-list-container">
+          </li>
+          <li className="book-shelves-list-container">
             <div className="bookshelves-search">
               <h1 className="bookshelves-list-heading">{labels} Books</h1>
               <div className="user-search-input-container">
@@ -243,10 +262,9 @@ class BookShelves extends Component {
               </div>
             </div>
             {this.renderAllBooks()}
-          </div>
-        </div>
-        <FooterView />
-      </div>
+          </li>
+        </ul>
+      </>
     )
   }
 }

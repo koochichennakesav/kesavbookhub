@@ -3,13 +3,13 @@ import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import {Component} from 'react'
 import Slider from 'react-slick'
+import {FaGoogle, FaTwitter, FaInstagram, FaYoutube} from 'react-icons/fa'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 import Header from '../Header'
 import TopRatedBooks from '../TopRatedBooks'
-import FooterView from '../FooterView'
 import './index.css'
 
 const apiStatusConstants = {
@@ -25,12 +25,6 @@ class Home extends Component {
   componentDidMount() {
     this.getTopRatedBooks()
   }
-
-  renderLoadingView = () => (
-    <div className="home-loader-container" testid="loader">
-      <Loader type="TailSpin" color="#0284C7" height={50} width={50} />
-    </div>
-  )
 
   getTopRatedBooks = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
@@ -62,20 +56,11 @@ class Home extends Component {
     }
   }
 
-  renderAllBooks = () => {
-    const {apiStatus} = this.state
-
-    switch (apiStatus) {
-      case apiStatusConstants.success:
-        return this.renderBooksListView()
-      case apiStatusConstants.failure:
-        return this.renderFailureView()
-      case apiStatusConstants.inProgress:
-        return this.renderLoadingView()
-      default:
-        return null
-    }
-  }
+  renderLoadingView = () => (
+    <div className="home-loader-container" testid="loader">
+      <Loader type="TailSpin" color="#0284C7" height={50} width={50} />
+    </div>
+  )
 
   renderFailureView = () => {
     const callUrl = () => {
@@ -113,7 +98,7 @@ class Home extends Component {
       dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 1,
       icon: true,
     }
@@ -128,30 +113,48 @@ class Home extends Component {
     }
 
     return (
-      <>
-        <div className="slides-to-show">
-          <Slider {...slidesToShow}>
-            {topRated.map(each => (
-              <TopRatedBooks key={each.id} bookItem={each} />
-            ))}
-          </Slider>
-        </div>
-        <div className="home-slides-to-show">
+      <div>
+        <ul
+          className="slides-to-show"
+          style={{listStyleType: 'none', paddingLeft: '0px'}}
+        ></ul>
+        <ul
+          className="home-slides-to-show"
+          style={{listStyleType: 'none', paddingLeft: '0px'}}
+        >
           <Slider {...homeSlidesToShow}>
             {topRated.map(each => (
               <TopRatedBooks key={each.id} bookItem={each} />
             ))}
           </Slider>
-        </div>
-        <div className="min-slides-to-show">
+        </ul>
+        <ul
+          className="min-slides-to-show"
+          style={{listStyleType: 'none', paddingLeft: '0px'}}
+        >
           <Slider {...minSlidesToShow}>
             {topRated.map(each => (
               <TopRatedBooks key={each.id} bookItem={each} />
             ))}
           </Slider>
-        </div>
-      </>
+        </ul>
+      </div>
     )
+  }
+
+  renderAllBooks = () => {
+    const {apiStatus} = this.state
+
+    switch (apiStatus) {
+      case apiStatusConstants.success:
+        return this.renderBooksListView()
+      case apiStatusConstants.failure:
+        return this.renderFailureView()
+      case apiStatusConstants.inProgress:
+        return this.renderLoadingView()
+      default:
+        return null
+    }
   }
 
   render() {
@@ -159,32 +162,64 @@ class Home extends Component {
       <div>
         <Header />
         <div className="home-container">
-          <h1 className="find-your-books">Find Your Next Favorite Books?</h1>
-          <p className="book-description">
-            You are in the right place. Tell us what titles or genres you have
-            enjoyed in the past, and we will give you surprisingly insightful
-            recommendations.
-          </p>
-
-          <button type="button" className="home-find-books">
-            <Link to="/shelf" className="nav-link">
-              Find Books
+          <div>
+            <h1 className="find-your-books">Find Your Next Favorite Books?</h1>
+            <p className="book-description">
+              You are in the right place. Tell us what titles or genres you have
+              enjoyed in the past, and we will give you surprisingly insightful
+              recommendations.
+            </p>
+            <Link to="/shelf" className="nav-link home-find-books-link">
+              <button type="button" className="home-find-books">
+                Find Books
+              </button>
             </Link>
-          </button>
-
-          <div className="top-rated-books-container">
-            <div className="top-container">
-              <h1 className="top-rated-heading">Top Rated Books</h1>
-              <Link to="/shelf">
-                <button type="button" className="find-books">
-                  Find Books
-                </button>
-              </Link>
+            <div className="top-rated-books-container">
+              <div className="top-container">
+                <h1 className="top-rated-heading">Top Rated Books</h1>
+                <Link to="/shelf">
+                  <button type="button" className="find-books">
+                    Find Books
+                  </button>
+                </Link>
+              </div>
+              {this.renderAllBooks()}
             </div>
-            {this.renderAllBooks()}
           </div>
+          <footer className="home-footer-home-section">
+            <div className="icon-container">
+              <a
+                rel="noreferrer"
+                href="https://www.google.com/"
+                target="_blank"
+              >
+                <FaGoogle className="icons" />
+              </a>
+              <a
+                rel="noreferrer"
+                href="https://www.twitter.com"
+                target="_blank"
+              >
+                <FaTwitter className="icons" />
+              </a>
+              <a
+                rel="noreferrer"
+                href="https://www.instagram.com"
+                target="_blank"
+              >
+                <FaInstagram className="icons" />
+              </a>
+              <a
+                rel="noreferrer"
+                href="https://www.youtube.com"
+                target="_blank"
+              >
+                <FaYoutube className="icons" />
+              </a>
+            </div>
+            <p className="contact-us">Contact us</p>
+          </footer>
         </div>
-        <FooterView />
       </div>
     )
   }

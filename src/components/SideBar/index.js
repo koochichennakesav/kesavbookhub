@@ -7,7 +7,7 @@ const SideBar = props => {
   const onChangeId = () => {
     onChangeOption(id)
   }
-  const onActiveOption = onActive ? 'active' : ''
+  const onActiveOption = onActive ? 'sidebar-active' : ''
 
   return (
     <li className="sidebar-options">
