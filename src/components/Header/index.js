@@ -31,27 +31,25 @@ const Header = props => {
             alt="website logo"
           />
         </Link>
-        <li>
-          <nav className="header-links-container list-item-header">
-            <Link to="/">
-              <button type="button" className={`header-button ${home}`}>
-                Home
-              </button>
-            </Link>
-            <Link to="/shelf">
-              <button type="button" className={`header-button ${bookShelves}`}>
-                Bookshelves
-              </button>
-            </Link>
-            <button
-              type="button"
-              className="header-button logout-button"
-              onClick={onClickLogout}
-            >
-              Logout
+        <nav className="header-links-container list-item-header">
+          <Link to="/">
+            <button type="button" className={`header-button ${home}`}>
+              Home
             </button>
-          </nav>
-        </li>
+          </Link>
+          <Link to="/shelf">
+            <button type="button" className={`header-button ${bookShelves}`}>
+              Bookshelves
+            </button>
+          </Link>
+          <button
+            type="button"
+            className="header-button logout-button"
+            onClick={onClickLogout}
+          >
+            Logout
+          </button>
+        </nav>
       </ul>
       <nav className="header-container-mobile">
         <Link to="/">

@@ -44,6 +44,7 @@ class BookShelves extends Component {
   state = {
     readStatus: bookshelvesList[0].value,
     searchValue: '',
+    srhValue: '',
     apiStatus: apiStatusConstants.initial,
     bookshelvesLists: [],
   }
@@ -91,11 +92,12 @@ class BookShelves extends Component {
   }
 
   onUserInput = event => {
-    this.setState({searchValue: event.target.value})
+    this.setState({srhValue: event.target.value})
   }
 
   onSearch = () => {
-    this.getBookshelves()
+    const {srhValue} = this.state
+    this.setState({searchValue: srhValue}, this.getBookshelves)
   }
 
   onClickSidebarOption = id => {
@@ -143,7 +145,7 @@ class BookShelves extends Component {
         </footer>
       </div>
     ) : (
-      <div className="search-failure-view-container">
+      <li className="search-failure-view-container">
         <img
           src="https://res.cloudinary.com/kesav-kuchi/image/upload/v1649657840/search_result_error_svlcd1.png"
           alt="no books"
@@ -152,7 +154,7 @@ class BookShelves extends Component {
         <p className="search-input">
           Your search for {searchValue} did not find any matches.
         </p>
-      </div>
+      </li>
     )
   }
 
@@ -161,7 +163,7 @@ class BookShelves extends Component {
       this.getBookshelves()
     }
     return (
-      <div className="failure-view-container">
+      <li className="failure-view-container">
         <img
           className="error-image"
           src="https://res.cloudinary.com/kesav-kuchi/image/upload/v1649519276/ErrorImage_asvwox.png"
@@ -173,7 +175,7 @@ class BookShelves extends Component {
         <button type="button" className="try-again" onClick={onGetBooks}>
           Try Again
         </button>
-      </div>
+      </li>
     )
   }
 
@@ -200,8 +202,8 @@ class BookShelves extends Component {
     return (
       <>
         <Header />
-        <ul className="book-shelves-container">
-          <li className="bookshelves-user-search-input-container">
+        <div className="book-shelves-container">
+          <div className="bookshelves-user-search-input-container">
             <input
               type="search"
               className="bookshelves-user-search-input"
@@ -216,21 +218,13 @@ class BookShelves extends Component {
             >
               <BsSearch />
             </button>
-          </li>
-          <h1 className="bookshelves-heading">Bookshelves</h1>
-          <ul className="bookshelves-options-container">
-            {bookshelvesList.map(each => (
-              <SideBar
-                sidebarOptions={each}
-                key={each.id}
-                onActive={readStatus === each.value}
-                onChangeOption={this.onClickSidebarOption}
-              />
-            ))}
-          </ul>
-          <li className="sidebar-container">
+          </div>
+          <div className="sidebar-container">
             <h1 className="book-shelves-heading">Bookshelves</h1>
-            <ul style={{paddingLeft: '0px', listStyleType: 'none'}}>
+            <ul
+              style={{paddingLeft: '0px', listStyleType: 'none'}}
+              className="bookshelves-options-container"
+            >
               {bookshelvesList.map(each => (
                 <SideBar
                   sidebarOptions={each}
@@ -240,8 +234,8 @@ class BookShelves extends Component {
                 />
               ))}
             </ul>
-          </li>
-          <li className="book-shelves-list-container">
+          </div>
+          <div className="book-shelves-list-container">
             <div className="bookshelves-search">
               <h1 className="bookshelves-list-heading">{labels} Books</h1>
               <div className="user-search-input-container">
@@ -262,8 +256,8 @@ class BookShelves extends Component {
               </div>
             </div>
             {this.renderAllBooks()}
-          </li>
-        </ul>
+          </div>
+        </div>
       </>
     )
   }

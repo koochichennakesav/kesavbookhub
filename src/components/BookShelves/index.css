@@ -169,10 +169,6 @@
   display: none;
 }
 
-.bookshelves-options-container {
-  display: none;
-}
-
 .bookshelves-footer-home-section {
   display: flex;
   flex-direction: column;
@@ -246,7 +242,11 @@
   }
 
   .sidebar-container {
-    display: none;
+    min-height: initial;
+    padding: 0px;
+    width: 90vw;
+    background-color: transparent;
+    display: block;
   }
 
   .bookshelves-result-container {

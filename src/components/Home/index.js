@@ -9,7 +9,6 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 import Header from '../Header'
-import TopRatedBooks from '../TopRatedBooks'
 import './index.css'
 
 const apiStatusConstants = {
@@ -66,6 +65,7 @@ class Home extends Component {
     const callUrl = () => {
       this.getTopRatedBooks()
     }
+
     return (
       <div className="home-failure-view-container">
         <img
@@ -85,66 +85,47 @@ class Home extends Component {
 
   renderBooksListView = () => {
     const {topRated} = this.state
-    const slidesToShow = {
+    const settings = {
       dots: false,
       infinite: true,
-      speed: 500,
       slidesToShow: 4,
       slidesToScroll: 1,
-      icon: true,
-    }
-
-    const minSlidesToShow = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      icon: true,
-    }
-
-    const homeSlidesToShow = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      icon: true,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 1048,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          },
+        },
+      ],
     }
 
     return (
-      <div>
-        <ul
-          className="slides-to-show"
-          style={{listStyleType: 'none', paddingLeft: '0px'}}
-        >
-          <Slider {...slidesToShow}>
-            {topRated.map(each => (
-              <TopRatedBooks key={each.id} bookItem={each} />
-            ))}
-          </Slider>
-        </ul>
-        <ul
-          className="home-slides-to-show"
-          style={{listStyleType: 'none', paddingLeft: '0px'}}
-        >
-          <Slider {...homeSlidesToShow}>
-            {topRated.map(each => (
-              <TopRatedBooks key={each.id} bookItem={each} />
-            ))}
-          </Slider>
-        </ul>
-        <ul
-          className="min-slides-to-show"
-          style={{listStyleType: 'none', paddingLeft: '0px'}}
-        >
-          <Slider {...minSlidesToShow}>
-            {topRated.map(each => (
-              <TopRatedBooks key={each.id} bookItem={each} />
-            ))}
-          </Slider>
-        </ul>
-      </div>
+      <>
+        <Slider {...settings}>
+          {topRated.map(each => (
+            <Link to={`/books/${each.id}`} className="nav-link">
+              <div className="item-container" key={each.id}>
+                <img
+                  src={each.coverPic}
+                  alt={each.title}
+                  className="top-cover-pic"
+                />
+                <h1 className="title">{each.title}</h1>
+                <p className="top-author-name">{each.authorName}</p>
+              </div>
+            </Link>
+          ))}
+        </Slider>
+      </>
     )
   }
 
@@ -165,10 +146,10 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <Header />
         <div className="home-container">
-          <div>
+          <>
             <h1 className="find-your-books">Find Your Next Favorite Books?</h1>
             <p className="book-description">
               You are in the right place. Tell us what titles or genres you have
@@ -191,9 +172,9 @@ class Home extends Component {
               </div>
               {this.renderAllBooks()}
             </div>
-          </div>
+          </>
           <footer className="home-footer-home-section">
-            <div className="icon-container">
+            <div className="icon-container" style={{listStyleType: 'none'}}>
               <a
                 rel="noreferrer"
                 href="https://www.google.com/"
@@ -226,7 +207,7 @@ class Home extends Component {
             <p className="contact-us">Contact us</p>
           </footer>
         </div>
-      </div>
+      </>
     )
   }
 }

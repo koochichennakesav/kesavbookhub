@@ -35,9 +35,11 @@ class BookDetails extends Component {
         Authorization: `Bearer ${jwtToken}`,
       },
     }
+
     const response = await fetch(url, options)
-    const data = await response.json()
+
     if (response.ok === true) {
+      const data = await response.json()
       const updatedData = {
         id: data.book_details.id,
         aboutAuthor: data.book_details.about_author,
@@ -95,6 +97,7 @@ class BookDetails extends Component {
       readStatus,
       aboutBook,
     } = bookItm
+
     return (
       <div>
         <div className="book-item-container">
@@ -112,7 +115,6 @@ class BookDetails extends Component {
                 </p>
               </div>
             </div>
-            <hr />
             <h1 className="about-author">About Author</h1>
             <p className="description">{aboutAuthor}</p>
             <h1 className="about-book">About Book</h1>
