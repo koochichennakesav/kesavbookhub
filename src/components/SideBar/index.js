@@ -7,6 +7,7 @@ const SideBar = props => {
   const onChangeId = () => {
     onChangeOption(id)
   }
+
   const onActiveOption = onActive ? 'sidebar-active' : ''
 
   return (
@@ -21,4 +22,5 @@ const SideBar = props => {
     </li>
   )
 }
+
 export default SideBar
