@@ -112,8 +112,8 @@ class Home extends Component {
       <>
         <Slider {...settings}>
           {topRated.map(each => (
-            <Link to={`/books/${each.id}`} className="nav-link">
-              <div className="item-container" key={each.id}>
+            <Link to={`/books/${each.id}`} className="nav-link" key={each.id}>
+              <div className="item-container">
                 <img
                   src={each.coverPic}
                   alt={each.title}
