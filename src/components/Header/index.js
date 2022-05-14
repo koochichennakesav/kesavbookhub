@@ -10,6 +10,7 @@ const Header = props => {
   const {location} = props
   const home = location.pathname === '/' ? 'active' : ''
   const bookShelves = location.pathname === '/shelf' ? 'active' : ''
+
   const onClickLogout = () => {
     const {history} = props
     Cookies.remove('jwt_token')
@@ -51,7 +52,10 @@ const Header = props => {
           </button>
         </nav>
       </ul>
-      <nav className="header-container-mobile">
+      <ul
+        className="header-container-mobile"
+        style={{paddingLeft: '0px', listStyleType: 'none'}}
+      >
         <Link to="/">
           <img
             className="book-hub-logo"
@@ -66,7 +70,7 @@ const Header = props => {
         >
           <GiHamburgerMenu className="ham-berger" style={{color: '#475569'}} />
         </button>
-      </nav>
+      </ul>
       {options && (
         <nav className="header-links-container-elements">
           <Link to="/">

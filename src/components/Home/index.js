@@ -150,7 +150,9 @@ class Home extends Component {
         <Header />
         <div className="home-container">
           <>
-            <h1 className="find-your-books">Find Your Next Favorite Books?</h1>
+            <h1 className="find-your-books" key="title">
+              Find Your Next Favorite Books?
+            </h1>
             <p className="book-description">
               You are in the right place. Tell us what titles or genres you have
               enjoyed in the past, and we will give you surprisingly insightful

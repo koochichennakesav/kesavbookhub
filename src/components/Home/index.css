@@ -43,7 +43,6 @@
   padding-left: 35px;
   border-radius: 4px;
   padding-right: 35px;
-  height: 362px;
   padding-top: 9px;
   margin-bottom: 70px;
 }
@@ -97,7 +96,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 47vh;
+  padding: 20px;
 }
 
 .home-error-image {
@@ -196,7 +195,6 @@ a {
     padding-left: 27px;
     padding-right: 27px;
     border-radius: 0px;
-    height: 200px;
     padding-top: 0px;
     padding-bottom: 0px;
     margin-bottom: 26px;
@@ -252,6 +250,7 @@ a {
 
   .home-try-again {
     margin-bottom: 10px;
+    height: 30px;
   }
 
   .home-footer-home-section {
@@ -259,7 +258,6 @@ a {
   }
 
   .home-failure-view-container {
-    height: 26vh;
     margin: 0px;
   }
 
@@ -280,16 +278,6 @@ a {
 
   .home-loader-container {
     height: 120px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .top-rated-books-container {
-    height: 427px;
-  }
-
-  .home-failure-view-container {
-    height: 35vh;
   }
 }
 

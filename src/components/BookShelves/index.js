@@ -116,12 +116,12 @@ class BookShelves extends Component {
     const {bookshelvesLists, searchValue} = this.state
 
     return bookshelvesLists.length > 0 ? (
-      <div>
-        <ul className="bookshelves-result-container">
+      <>
+        <div className="bookshelves-result-container">
           {bookshelvesLists.map(each => (
             <BookshelvesListView bookshelvesList={each} key={each.id} />
           ))}
-        </ul>
+        </div>
         <footer className="bookshelves-footer-home-section">
           <div className="icon-container">
             <a rel="noreferrer" href="https://www.google.com/" target="_blank">
@@ -143,7 +143,7 @@ class BookShelves extends Component {
           </div>
           <p className="contact-us">Contact us</p>
         </footer>
-      </div>
+      </>
     ) : (
       <li className="search-failure-view-container">
         <img
@@ -162,6 +162,7 @@ class BookShelves extends Component {
     const onGetBooks = () => {
       this.getBookshelves()
     }
+
     return (
       <li className="failure-view-container">
         <img
@@ -203,24 +204,10 @@ class BookShelves extends Component {
       <>
         <Header />
         <div className="book-shelves-container">
-          <div className="bookshelves-user-search-input-container">
-            <input
-              type="search"
-              className="bookshelves-user-search-input"
-              value={searchInput}
-              onChange={this.onUserInput}
-            />
-            <button
-              type="button"
-              testid="searchButton"
-              className="search-icon"
-              onClick={this.onSearch}
-            >
-              <BsSearch />
-            </button>
-          </div>
           <div className="sidebar-container">
-            <h1 className="book-shelves-heading">Bookshelves</h1>
+            <h1 className="book-shelves-heading" key="title">
+              Bookshelves
+            </h1>
             <ul
               style={{paddingLeft: '0px', listStyleType: 'none'}}
               className="bookshelves-options-container"
@@ -244,14 +231,16 @@ class BookShelves extends Component {
                   className="user-search-input"
                   value={searchInput}
                   onChange={this.onUserInput}
+                  key="input-2"
                 />
                 <button
                   type="button"
                   testid="searchButton"
                   className="search-icon"
                   onClick={this.onSearch}
+                  key="bs-search-2"
                 >
-                  <BsSearch />
+                  <BsSearch key="bs-search-3" />
                 </button>
               </div>
             </div>

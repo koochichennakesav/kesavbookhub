@@ -227,8 +227,22 @@
     font-weight: 700;
   }
 
-  .bookshelves-search {
+  .bookshelves-list-heading {
     display: none;
+  }
+
+  .book-shelves-heading {
+    margin-top: 50px;
+  }
+
+  .user-search-input-container {
+    position: relative;
+    top: -166px;
+  }
+
+  .search-icon {
+    margin-left: 14px;
+    margin-right: 16px;
   }
 
   .bookshelves-options-container {
