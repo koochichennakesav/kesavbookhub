@@ -52,9 +52,8 @@ const Header = props => {
           </button>
         </nav>
       </ul>
-      <ul
+      <nav
         className="header-container-mobile"
-        style={{paddingLeft: '0px', listStyleType: 'none'}}
       >
         <Link to="/">
           <img
@@ -70,7 +69,7 @@ const Header = props => {
         >
           <GiHamburgerMenu className="ham-berger" style={{color: '#475569'}} />
         </button>
-      </ul>
+      </nav>
       {options && (
         <nav className="header-links-container-elements">
           <Link to="/">
